@@ -20,7 +20,6 @@ public class CustomerRestController {
     public CustomerRestController(CustomerRepository repository) {
         this.repository = repository;
     }
-
     @GetMapping("/customers")
     public Iterable<Customer> allTheCustomers() {
         return repository.findAll();

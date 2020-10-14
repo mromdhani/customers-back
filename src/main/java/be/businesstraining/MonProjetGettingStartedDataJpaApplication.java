@@ -23,23 +23,23 @@ public class MonProjetGettingStartedDataJpaApplication {
 		return (args) -> {
 			// save a few customers
 			repository.save(Customer.builder()
-										.firstName("Jack")
-										.lastName("Bauer")
+										.firstName("Christian")
+										.lastName("MAMAY")
 										.build());
 			repository.save(Customer.builder()
-										.firstName("Chloe")
-										.lastName("O'Brian")
+										.firstName("Jonathan")
+										.lastName("ORDONEZ")
 										.build());
 
 			repository.save(Customer.builder()
-										.firstName("Kim")
-										.lastName("Bauer")
+										.firstName("Yorick")
+										.lastName("WEENEN")
 										.build());
 
 			// fetch all customers
 			log.info("Customers found with findAll():");
 			log.info("-------------------------------");
-			for (Customer customer : repository.findAll()) {
+			for (Customer customer : repository.findAllByLastNameContainingIgnoreCase("m")) {
 				log.info(customer.toString());
 			}
 

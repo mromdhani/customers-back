@@ -35,11 +35,20 @@ public class MonProjetGettingStartedDataJpaApplication {
 										.firstName("Yorick")
 										.lastName("WEENEN")
 										.build());
+			repository.save(Customer.builder()
+					.firstName("Abderzak")
+					.lastName("OULAD CHAIB")
+					.build());
+
+			repository.save(Customer.builder()
+					.firstName("Noureddine")
+					.lastName("RACHDI")
+					.build());
 
 			// fetch all customers
 			log.info("Customers found with findAll():");
 			log.info("-------------------------------");
-			for (Customer customer : repository.findAllByLastNameContainingIgnoreCase("m")) {
+			for (Customer customer : repository.findAllByLastNameContainingIgnoreCaseOrFirstNameContainingIgnoreCase("z", "z")) {
 				log.info(customer.toString());
 			}
 

@@ -8,5 +8,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface CustomerRepository
         extends CrudRepository<Customer, Long> {
 
-   public  List<Customer> findAllByLastNameContainingIgnoreCase(String s);
+   public  List<Customer>
+        findAllByLastNameContainingIgnoreCaseOrFirstNameContainingIgnoreCase(String s1, String s2);
 }
